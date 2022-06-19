@@ -21,7 +21,7 @@ namespace GrateCheeses.Api.Controllers
             _cheeseData = cheeseData;
         }
 
-
+        // GET api/v1/<gratecheeses>
         [HttpGet]
         public ActionResult<IEnumerable<Cheese>> Get()
         {
@@ -33,10 +33,55 @@ namespace GrateCheeses.Api.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Something went wrong processing this request.");
+                _logger.LogError(ex, "Something went wrong processing this request for all cheese.");
 
                 return BadRequest();
             }
+        }
+
+
+
+        // GET api/v1/<gratecheeses>/5
+        [HttpGet("{id}")]
+        public ActionResult<Cheese> Get(int id)
+        {
+            try
+            {
+                var cheese = _cheeseData.GetCheeseByCheeseId(id);
+
+                if (cheese == null)
+                {
+                    _logger.LogError($"Unabled to find a cheese with id {id}");
+
+                    return NotFound($"Unabled to find a cheese with id {id}");
+                }
+
+                return Ok(cheese);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Something went wrong processing this request for a specific cheese.");
+
+                return BadRequest();
+            }
+        }
+
+        // POST api/v1/<gratecheeses>
+        [HttpPost]
+        public void Post([FromBody] string value)
+        {
+        }
+
+        // PUT api/<test>/5
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] string value)
+        {
+        }
+
+        // DELETE api/<test>/5
+        [HttpDelete("{id}")]
+        public void Delete(int id)
+        {
         }
     }
 }
