@@ -23,6 +23,13 @@ docker run -d -p 8000:80 gratecheeses.api
 ```
 Once you run the docker command, the API should be available on `localhost:8000` and should default to Swagger
 
+To run the unit tests, you need to navigate to the `GrateCheeses.Tests` directory in Powershell, then run the following command
+
+``` powershell
+dotnet test --logger "html;logfilename=testResults.html"
+```
+This will run the unit tests, produce a html report and store it in a TestResults directory under the GrateCheeses.Test folder
+
 
 ## PROJECT STRUCTURE
 

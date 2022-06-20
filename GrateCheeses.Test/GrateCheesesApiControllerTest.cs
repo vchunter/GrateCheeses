@@ -37,7 +37,9 @@ namespace GrateCheeses.Test
             // mock the GetAllCheeses data call to return a list of 10 cheeses 
             var lotsOfCheese = _fixture.CreateMany<Cheese>(10);
 
-            _cheeseData.Setup(x => x.GetAllCheeses()).Returns(lotsOfCheese);
+            _cheeseData
+                .Setup(x => x.GetAllCheeses())
+                .Returns(lotsOfCheese);
 
             //Act
             // call the Get api endpoint on the controller
@@ -58,7 +60,9 @@ namespace GrateCheeses.Test
         {
             //Arrange
             // mock the GetAllCheeses data throw a Null Reference Exception
-            _cheeseData.Setup(x => x.GetAllCheeses()).Throws<NullReferenceException>();
+            _cheeseData
+                .Setup(x => x.GetAllCheeses())
+                .Throws<NullReferenceException>();
 
             //Act
             // call the Get api endpoint on the controller
@@ -68,6 +72,33 @@ namespace GrateCheeses.Test
             // verify that the api endpoint returns a bad response
             var statusResult = cheesyResult.Result as BadRequestResult;
             Assert.Equal(400, statusResult.StatusCode);
+        }
+
+        [Fact]
+        public void GetCheeseById_WhenCalled_ReturnsOkResultWithCheese()
+        {
+            //Arrange
+            // mock the GetCheeseById data call to return a list of 10 cheeses 
+            var aCheese = _fixture
+                .Build<Cheese>()
+                .With(x => x.CheeseId, 6)
+                .Create();
+
+            _cheeseData
+                .Setup(x => x.GetCheeseByCheeseId(aCheese.CheeseId))
+                .Returns(aCheese);
+
+            //Act
+            // call the Get api endpoint on the controller
+            var cheesyResult = _controller.Get(aCheese.CheeseId);
+
+            //Assert
+            // verify that the api endpoint returns a successful response
+            var statusResult = cheesyResult.Result as OkObjectResult;
+
+            // verify that the results contained 10 cheeses in the list
+            var cheese = (Cheese)statusResult.Value;
+            Assert.Equal(cheese.CheeseId, aCheese.CheeseId);
         }
     }
 }

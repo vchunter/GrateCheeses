@@ -10,6 +10,7 @@ namespace GrateCheeses.Api.Repository
 {
     //TODO: This class is used to serve the cheese data from a json data file to start off with
     //      Future plans are to move the cheese data out of an embedded file and into a database
+    //      maybe something like a NoSQL db like DynamoDb in AWS
     //      The interface will help when the time comes to introduce the new database data source 
     //      and also with unit testing
     public class CheeseJsonData : ICheeseData
