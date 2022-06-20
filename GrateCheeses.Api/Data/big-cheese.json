@@ -1,42 +1,42 @@
 [
-  {
-    "CheeseId": 1,
-    "Name": "Cheddar",
-    "Colour": "Yellow",
-    "Type": "hard",
-    "PricePerKg": 12.00,
-    "ImageName": "cheddar.jpg"
-  },
-  {
-    "CheeseId": 2,
-    "Name": "Brie",
-    "Colour": "White",
-    "Type": "soft",
-    "PricePerKg": 18.00,
-    "ImageName": "brie.jpg"
-  },
-  {
-    "CheeseId": 3,
-    "Name": "Gorgonzola",
-    "Colour": "Blue",
-    "Type": "blue",
-    "PricePerKg": 30.00,
-    "ImageName": "gorgonzola.jpg"
-  },
-  {
-    "CheeseId": 4,
-    "Name": "Danish Feta",
-    "Colour": "White",
-    "Type": "creamy & crumbly",
-    "PricePerKg": 15.00,
-    "ImageName": "danish-feta.jpg"
-  },
-  {
-    "CheeseId": 5,
-    "Name": "Mozzarella",
-    "Colour": "Yellow",
-    "Type": "soft & melty",
-    "PricePerKg": 20.00,
-    "ImageName": "mozzarella.jpg"
-  }
+	{
+		"CheeseId": 1,
+		"Name": "Cheddar",
+		"Colour": "Yellow",
+		"Type": "hard",
+		"PricePerKg": 12.0,
+		"ImageName": "cheddar.jpg"
+	},
+	{
+		"CheeseId": 2,
+		"Name": "Brie",
+		"Colour": "White",
+		"Type": "soft",
+		"PricePerKg": 18.0,
+		"ImageName": "brie.jpg"
+	},
+	{
+		"CheeseId": 3,
+		"Name": "Gorgonzola",
+		"Colour": "Blue",
+		"Type": "blue",
+		"PricePerKg": 30.0,
+		"ImageName": "gorgonzola.jpg"
+	},
+	{
+		"CheeseId": 4,
+		"Name": "Danish Feta",
+		"Colour": "White",
+		"Type": "creamy & crumbly",
+		"PricePerKg": 15.0,
+		"ImageName": "danish-feta.jpg"
+	},
+	{
+		"CheeseId": 5,
+		"Name": "Mozzarella",
+		"Colour": "Yellow",
+		"Type": "soft & melty",
+		"PricePerKg": 20.0,
+		"ImageName": "mozzarella.jpg"
+	}
 ]
